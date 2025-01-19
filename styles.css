@@ -1,0 +1,365 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url('ne.png') center/cover no-repeat;
+    background-attachment: fixed; /* Optional: Keeps the background fixed during scroll */
+    background-size: cover;
+    color: white;
+}
+
+/* General Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3); /* 30% transparent black background */
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(8px); /* Apply blur effect */
+    box-sizing: border-box; /* Prevent shifting */
+    left: 0; /* Ensure navbar starts from the left */
+}
+
+/* Logo Styling */
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hover Effects */
+.nav-links a:hover {
+    color: #ff6347; /* Change text color on hover */
+}
+
+/* Underline Effect on Hover */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff6347;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Active Link Styling */
+.nav-links a.active {
+    color: #ff6347; /* Active link will stay highlighted */
+}
+
+/* Mobile Styling */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        padding: 10px 0;
+        margin-left: 0;
+        display: none; /* Hide the links initially on mobile */
+        text-align: center;
+    }
+
+    .nav-links.show {
+        display: flex; /* Display the links when the menu is toggled */
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+        letter-spacing: 0.5px;
+    }
+
+    #logo {
+        width: 80px; /* Make logo smaller on mobile */
+        height: 80px;
+        margin-bottom: 15px; /* Add space below the logo */
+    }
+
+    /* Add a hamburger menu icon for mobile */
+    .navbar .hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: 30px;
+        color: white;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background: url('hero-bg.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-section button {
+    padding: 10px 20px;
+    background: #ff6347;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.hero-section button:hover {
+    background: #e5533d;
+}
+
+/* Collections Section */
+.collections-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.collections-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.collection-item {
+    text-align: center;
+    max-width: 300px;
+}
+
+.collection-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.collection-item p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Contact Section */
+/* Contact Section */
+.contact-section {
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.3); /* Transparent black background */
+    color: #fff;
+    text-align: center;
+    backdrop-filter: blur(8px); /* Apply the blur effect */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Add a subtle shadow for better visibility */
+}
+
+
+.contact-section h2 {
+    margin-bottom: 20px;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-section button {
+    padding: 10px 20px;
+    background: #ff6347;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-section button:hover {
+    background: #e5533d;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #fff;
+}
+
+/* Logo Styling */
+#logo {
+    width: 100px;  /* Adjust the size of the logo */
+    height: 100px; /* Ensure the logo remains square */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 50px; /* Optional: to add rounded corners */
+}
+
+/* For mobile menu toggling */
+.hamburger {
+    display: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #111;
+    color: #fff;
+}
+
+
+
+
+
+
+
+/* My Font */
+/* Define the normal weight font */
+@font-face {
+    font-family: 'MyFont'; /* The name you will use to reference the font */
+    src: url('OPTIBodoni-Antiqua.otf') format('opentype'); /* Path to the .otf file */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply the font to the body or other elements */
+body {
+    font-family: 'MyFont', sans-serif;
+}
+.logo{
+    font-family: 'MyFont';
+}
+
+
+
+
+/* About Section */
+.about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3); /* Optional: Transparent black background */
+    backdrop-filter: blur(8px); /* Optional: Apply blur effect */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for better visibility */
+}
+
+.contact-section button {
+    padding: 10px 20px;
+    background: #ff6347;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+/* Hover effect for Submit Button */
+.contact-section button:hover {
+    background: #e5533d;
+}
+
+/* Ensure no change in responsive behavior */
+@media screen and (max-width: 768px) {
+    /* No changes here - keeping the mobile responsive styles intact */
+}
+
+
+/* Contact Section */
+.contact-section {
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.3); /* Transparent black background */
+    color: #fff;
+    text-align: center;
+    backdrop-filter: blur(8px); /* Apply blur effect */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Add shadow for better visibility */
+}
+
+.contact-section h2 {
+    margin-bottom: 20px;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column; /* Align form elements vertically */
+    align-items: center; /* Center form elements */
+    width: 100%;
+    max-width: 500px; /* Limit the width of the form */
+    margin: 0 auto; /* Center form on the page */
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px 0; /* Space between form elements */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-section button {
+    padding: 10px 20px;
+    background: #ff6347;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    width: 100%; /* Ensure the button takes full width */
+    max-width: 400px; /* Limit the width of the button */
+    margin-top: 15px; /* Space above the button */
+}
+
+/* Hover effect for Submit Button */
+.contact-section button:hover {
+    background: #e5533d;
+}
